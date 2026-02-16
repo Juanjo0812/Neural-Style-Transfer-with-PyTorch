@@ -21,15 +21,21 @@ The codebase is organized with a clean modular structure, making it suitable for
 
 ### Content Image
 
-![Content Image](images/Car.jpg)
+<p align="center">
+  <img src="images/Car.jpg" width="400"/>
+</p>
 
 ### Style Image
 
-![Style Image](images/Fluid.jpg)
+<p align="center">
+  <img src="images/Fluid.jpg" width="400"/>
+</p>
 
 ### Optimization Progress (GIF)
 
-![Style Transfer Result](result/optimization.gif)
+<p align="center">
+  <img src="result/optimization.gif" width="500"/>
+</p>
 
 The GIF shows the progressive refinement of the target image during optimization.
 
