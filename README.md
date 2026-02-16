@@ -2,7 +2,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-red)
 
 
-# 🎨 Neural Style Transfer with PyTorch
+# Neural Style Transfer with PyTorch
 
 A modular implementation of **Neural Style Transfer (NST)** using a pretrained VGG19 network in PyTorch.
 
@@ -17,7 +17,7 @@ The codebase is organized with a clean modular structure, making it suitable for
 
 ---
 
-## 🖼 Visual Results
+## Visual Results
 
 ### Content Image
 
@@ -43,7 +43,7 @@ Intermediate outputs are saved periodically and later combined into an animation
 
 ---
 
-## 🧠 Problem Formulation
+## Problem Formulation
 
 Given:
 
@@ -72,9 +72,9 @@ Where the total loss is defined as:
 
 ---
 
-## 🔬 Theoretical Background
+## Theoretical Background
 
-### 1️⃣ Content Representation
+### 1. Content Representation
 
 Content is captured using deep feature activations from a pretrained convolutional network (VGG).
 
@@ -91,7 +91,7 @@ Where:
 
 ---
 
-### 2️⃣ Style Representation
+### 2️. Style Representation
 
 Style is represented using **Gram matrices**, which measure correlations between feature maps.
 
@@ -113,7 +113,7 @@ The final style loss is a weighted sum across multiple layers.
 
 ---
 
-### 3️⃣ Optimization Strategy
+### 3️. Optimization Strategy
 
 Unlike traditional CNN training:
 
@@ -125,7 +125,7 @@ This demonstrates the flexibility of PyTorch’s autograd engine in optimizing a
 
 ---
 
-## 🏗 Architecture Overview
+## Architecture Overview
 
 The project follows a modular structure to ensure clarity, reusability, and separation of concerns.
 
@@ -147,7 +147,7 @@ src/
 
 ---
 
-## 🔄 Training Workflow
+## Training Workflow
 
 1. Load pretrained VGG19 (frozen weights)
 2. Extract content and style features
@@ -161,7 +161,7 @@ The optimization runs for a fixed number of iterations and updates only the targ
 
 ---
 
-## 📂 Output Behavior
+## Output Behavior
 
 During training, the optimized image is saved at fixed intervals.
 
@@ -190,7 +190,7 @@ After the optimization finishes:
 
 ---
 
-## 📊 Convergence Insight
+## Convergence Insight
 
 By saving intermediate outputs, the project enables analysis of:
 
@@ -203,16 +203,16 @@ This design makes the repository suitable for experimentation and learning purpo
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
-### 1️⃣ Clone the Repository
+### 1️. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/neural-style-transfer.git
 cd neural-style-transfer
 ```
 
-### 2️⃣ Install Dependencies
+### 2️. Install Dependencies
 
 It is recommended to create and activate a virtual environment before installing dependencies.
 
@@ -220,7 +220,7 @@ It is recommended to create and activate a virtual environment before installing
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run the Training Script
+### 3️. Run the Training Script
 
 ```bash
 python -m src.Train
@@ -232,7 +232,7 @@ Once executed:
 - Intermediate images will be saved automatically inside the `outputs/` directory.
 - The final optimized image will be displayed after training completes.
 
-### 4️⃣ (Optional) Generate Optimization GIF
+### 4️. (Optional) Generate Optimization GIF
 
 ```bash
 python -m src.Create_gif
@@ -241,11 +241,11 @@ This script reads the images stored in `outputs/` and generates an animation sho
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 The main hyperparameters can be adjusted directly inside `src/Train.py`.
 
-### 🔧 Optimization Parameters
+### Optimization Parameters
 
 - `steps` → Total number of optimization iterations  
 - `lr` → Learning rate for the Adam optimizer  
@@ -253,7 +253,7 @@ The main hyperparameters can be adjusted directly inside `src/Train.py`.
 - `style_weight (β)` → Controls stylistic intensity  
 - `save_every` → Frequency at which intermediate images are saved  
 
-### 🖼 Image Parameters
+### Image Parameters
 
 - Path to content image  
 - Path to style image  
@@ -264,7 +264,7 @@ Modifying these parameters allows experimentation with different artistic outcom
 
 ---
 
-## 📚 Acknowledgements
+## Acknowledgements
 
 This project was inspired by the Neural Style Transfer implementation presented in the O'Reilly course:
 
@@ -288,7 +288,7 @@ The original course materials and related repositories can be found through O'Re
 
 ---
 
-## 💼 Technical Highlights
+## Technical Highlights
 
 This project demonstrates practical understanding of:
 
@@ -303,20 +303,20 @@ This project demonstrates practical understanding of:
 
 ---
 
-## 🧠 Skills Demonstrated
+## Skills Demonstrated
 
-### 🔹 Deep Learning & Computer Vision
+### Deep Learning & Computer Vision
 - CNN-based perceptual feature extraction
 - Feature map correlation analysis
 - Optimization-based image generation
 
-### 🔹 PyTorch Proficiency
+### PyTorch Proficiency
 - Dynamic computational graphs
 - Autograd engine usage
 - Parameter vs tensor optimization
 - Gradient-based iterative refinement
 
-### 🔹 Software Engineering Practices
+### Software Engineering Practices
 - Separation of concerns (Model / Loss / Training / Utils)
 - Reproducible project structure
 - Clear documentation for usability
@@ -324,7 +324,7 @@ This project demonstrates practical understanding of:
 
 ---
 
-## 👤 Author
+## Author
 
 Juan Joseph  
 Electronic Engineering  
