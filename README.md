@@ -22,19 +22,19 @@ The codebase is organized with a clean modular structure, making it suitable for
 ### Content Image
 
 <p align="center">
-  <img src="images/Car.jpg" width="400"/>
+  <img src="images/Car.jpg" width="200"/>
 </p>
 
 ### Style Image
 
 <p align="center">
-  <img src="images/Fluid.jpg" width="400"/>
+  <img src="images/Fluid.jpg" width="200"/>
 </p>
 
 ### Optimization Progress (GIF)
 
 <p align="center">
-  <img src="result/optimization.gif" width="500"/>
+  <img src="result/optimization.gif" width="350"/>
 </p>
 
 The GIF shows the progressive refinement of the target image during optimization.
