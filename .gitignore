@@ -1,0 +1,17 @@
+venv/
+env/
+style_transfer_env/
+
+__pycache__/
+*.pyc
+*.pyo
+
+.ipynb_checkpoints/
+
+outputs/
+
+.DS_Store
+Thumbs.db
+
+*.pt
+*.pth
