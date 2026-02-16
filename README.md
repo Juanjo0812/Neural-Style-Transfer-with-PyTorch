@@ -213,7 +213,7 @@ This design makes the repository suitable for experimentation and learning purpo
 ### 1️. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/neural-style-transfer.git
+git clone https://github.com/Juanjo0812/Neural-Style-Transfer-with-PyTorch.git
 cd neural-style-transfer
 ```
 
