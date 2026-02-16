@@ -47,28 +47,32 @@ Intermediate outputs are saved periodically and later combined into an animation
 
 Given:
 
-- A **content image** \( I_c \)
-- A **style image** \( I_s \)
+- A **content image** $I_c$
+- A **style image** $I_s$
 
-We aim to generate a new image \( I_t \) (target image) that preserves:
+We aim to generate a new image $I_t$ (target image) that preserves:
 
-- The semantic structure of \( I_c \)
-- The artistic texture and style of \( I_s \)
+- The semantic structure of $I_c$
+- The artistic texture and style of $I_s$
 
-This is formulated as an optimization problem:
+This is formulated as the following optimization problem:
 
-\[
-I_t^* = \arg\min_{I_t} \; \mathcal{L}_{total}(I_t)
-\]
+$$
+I_t^* = \arg\min_{I_t} \mathcal{L}_{total}(I_t)
+$$
 
 Where the total loss is defined as:
 
-\[
-\mathcal{L}_{total} = \alpha \mathcal{L}_{content} + \beta \mathcal{L}_{style}
-\]
+$$
+\mathcal{L}_{total}
+=
+\alpha \mathcal{L}_{content}
++
+\beta \mathcal{L}_{style}
+$$
 
-- \( \alpha \) controls content preservation
-- \( \beta \) controls stylistic influence
+- $\alpha$ controls content preservation  
+- $\beta$ controls stylistic influence  
 
 ---
 
@@ -82,34 +86,60 @@ Higher-level convolutional layers encode semantic structure while discarding low
 
 Content loss is computed as:
 
-\[
-\mathcal{L}_{content} = \frac{1}{2} \| F_{target}^{l} - F_{content}^{l} \|^2
-\]
+$$
+\mathcal{L}_{content}
+=
+\frac{1}{2}
+\left\|
+F^{l}_{target}
+-
+F^{l}_{content}
+\right\|^2
+$$
 
 Where:
-- \( F^l \) represents feature maps from layer \( l \)
+
+- $F^{l}$ represents the feature maps extracted from layer $l$
 
 ---
 
-### 2️. Style Representation
+### 2. Style Representation
 
 Style is represented using **Gram matrices**, which measure correlations between feature maps.
 
 For a given layer:
 
-\[
-G^l = F^l (F^l)^T
-\]
+$$
+G^{l}
+=
+F^{l}
+(F^{l})^{T}
+$$
 
 The Gram matrix captures texture patterns independent of spatial arrangement.
 
-Style loss is computed as:
+Style loss at layer $l$ is computed as:
 
-\[
-\mathcal{L}_{style}^l = \frac{1}{4N_l^2M_l^2} \| G_{target}^l - G_{style}^l \|^2
-\]
+$$
+\mathcal{L}_{style}^{l}
+=
+\frac{1}{4N_l^2 M_l^2}
+\left\|
+G^{l}_{target}
+-
+G^{l}_{style}
+\right\|^2
+$$
 
-The final style loss is a weighted sum across multiple layers.
+The final style loss is a weighted sum across multiple layers:
+
+$$
+\mathcal{L}_{style}
+=
+\sum_{l}
+w_l
+\mathcal{L}_{style}^{l}
+$$
 
 ---
 
