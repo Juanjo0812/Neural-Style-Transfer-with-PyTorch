@@ -64,11 +64,7 @@ $$
 Where the total loss is defined as:
 
 $$
-\mathcal{L}_{total}
-=
-\alpha \mathcal{L}_{content}
-+
-\beta \mathcal{L}_{style}
+\mathcal{L}_{total} = \alpha \mathcal{L}_{content} + \beta \mathcal{L}_{style}
 $$
 
 - $\alpha$ controls content preservation  
@@ -87,14 +83,7 @@ Higher-level convolutional layers encode semantic structure while discarding low
 Content loss is computed as:
 
 $$
-\mathcal{L}_{content}
-=
-\frac{1}{2}
-\left\|
-F^{l}_{target}
--
-F^{l}_{content}
-\right\|^2
+\mathcal{L}_{content} = \frac{1}{2} \left\| F^{l}_{target} - F^{l}_{content} \right\|^2
 $$
 
 Where:
@@ -110,35 +99,21 @@ Style is represented using **Gram matrices**, which measure correlations between
 For a given layer:
 
 $$
-G^{l}
-=
-F^{l}
-(F^{l})^{T}
+G^{l} = F^{l} (F^{l})^{T}
 $$
 
 The Gram matrix captures texture patterns independent of spatial arrangement.
 
 Style loss at layer $l$ is computed as:
 
-$$
-\mathcal{L}_{style}^{l}
-=
-\frac{1}{4N_l^2 M_l^2}
-\left\|
-G^{l}_{target}
--
-G^{l}_{style}
-\right\|^2
+$$ 
+\mathcal{L}_{style}^{l} = \frac{1}{4N_l^2 M_l^2} \left\| G^{l}_{target} - G^{l}_{style} \right\|^2
 $$
 
 The final style loss is a weighted sum across multiple layers:
 
 $$
-\mathcal{L}_{style}
-=
-\sum_{l}
-w_l
-\mathcal{L}_{style}^{l}
+\mathcal{L}_{style} = \sum_{l} w_l \mathcal{L}_{style}^{l}
 $$
 
 ---
