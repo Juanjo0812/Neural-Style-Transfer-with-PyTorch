@@ -66,7 +66,7 @@ def main():
 
     # Optimizer
     optimizer = optim.Adam([target], lr=0.003)
-    steps = 10000
+    steps = 10200
     save_every = 300
 
 
